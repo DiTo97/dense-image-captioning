@@ -1,18 +1,18 @@
-# image dense captioning
+# dense image captioning
 
-An unofficial Torch implementation of [J. Lu, C. Xiong, et al., *Knowing when to Look: Adaptive Attention via a Visual Sentinel for Image Captioning*, 2017](https://arxiv.org/abs/1612.01887) trained on a collection comprising the COCO image captioning and Flickr30k datasets.
+An unofficial Torch implementation of [J. Lu, C. Xiong, et al., *Knowing when to Look: Adaptive Attention via a Visual Sentinel for Image Captioning*, 2017](https://arxiv.org/abs/1612.01887) trained on the COCO image captioning and Flickr30k datasets.
 
 The implementation presents the following variations from the paper:
 - deformable adaptive attention;
 - larger visual sentinel size (128-dim);
-- model eval against the [SPICE](https://panderson.me/spice/) image captioning metric;
-- [MCTS-based decoding](https://arxiv.org/pdf/2104.05336.pdf) instead of beam search decoding
+- model eval against the [SPICE](https://panderson.me/spice/) metric;
+- [MCTS-based decoding](https://arxiv.org/pdf/2104.05336.pdf).
 
 ## Introduction
 
 The role of image dense captioning is immense for enabling visual-language understanding of the outer world.
 
-In this project we propose a deformable variant of the visual sentinel via adaptive attention introduced in the reference paper which allows larger networks to be constructed while running at a faster inference speed and training for almost half the epochs with equal performance.
+In this project we propose a deformable variant of the visual sentinel via adaptive attention introduced in the reference paper for estimating grounding probas which allows larger networks to be constructed while running at a faster inference speed and training for almost half the epochs with equal performance.
 
 This project is part of a larger venture for the development of visual-language aid tools for visually-impaired people,
 by combining speech recognition, speech synthesis, image captioning and familiar person identification.
