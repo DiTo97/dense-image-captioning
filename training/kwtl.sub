@@ -1,0 +1,28 @@
+executable              = kwtl.sh
+arguments               = $(ClusterId).$(ProcId)
+output                  = out/kwtl.$(ClusterId).$(ProcId).out
+error                   = err/kwtl.$(ClusterId).$(ProcId).err
+log                     = log/kwtl.$(ClusterId).log
+
+# CERN sandbox's input files
+should_transfer_files   = YES
+transfer_input_files    = adaptive-?.pkl, preprocessing.zip, build_vocab.py, data_loader.py, models.py, train.py, utils.py
+    
+# CERN sandbox's output files
+WHEN_TO_TRANSFER_OUTPUT = ON_EXIT_OR_EVICT 
++SpoolOnEvict = False
+
+transfer_output_files   = models, results
+
+# Note: Since we had issues with PyTorch's DataParallel class for distributed training,
+# it's better to work with a single GPU for now and leave the below number off to 1.
+request_GPUs = 1
+
+# # Request priority in the queue
+# # (do it only with small jobs)
+# +testJob = True
++JobFlavour = "testmatch"
++MaxTransferOutputMB = -1
+
+queue
+

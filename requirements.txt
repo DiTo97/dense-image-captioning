@@ -1,0 +1,13 @@
+gensim
+ipykernel
+ipython-autotime
+ipywidgets
+matplotlib
+numpy
+pandas
+Pillow
+pycocotools
+pyemd
+scikit-image
+torch==2.0.1
+torchvision
